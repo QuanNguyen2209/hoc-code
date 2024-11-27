@@ -5,6 +5,7 @@ const computerChoiceDisplay = document.getElementById("computer-choice");
 const resultMessage = document.getElementById("result-message");
 
 // Các lựa chọn có thể có trong trò chơi
+// test12345
 const choices = ["Kéo", "Búa", "Bao"];
 
 // Hàm tạo lựa chọn ngẫu nhiên của máy tính
