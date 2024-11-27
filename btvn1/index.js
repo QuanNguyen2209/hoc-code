@@ -6,7 +6,7 @@ const resultMessage = document.getElementById("result-message");
 
 // Các lựa chọn có thể có trong trò chơi
 // test12345
-const choices = ["Kéo 2", "Búa 2", "Bao 2"];
+const choices = ["Kéo 1", "Búa 1", "Bao 1"];
 
 // Hàm tạo lựa chọn ngẫu nhiên của máy tính
 function getComputerChoice() {
