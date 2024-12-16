@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kéo Búa Bao</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-  <h1>Trò Chơi Kéo - Búa - Bao</h1>
-  <div class="choices">
-    <button id="kéo">Kéo ✌️</button>
-    <button id="búa">Búa ✊</button>
-    <button id="bao">Bao 🖐️</button>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kéo Búa Bao</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Trò Chơi Kéo - Búa - Bao</h1>
+    <div class="choices">
+      <button id="kéo" value="keo">Kéo ✌️</button>
+      <button id="búa" value="bua">Búa ✊</button>
+      <button id="bao" value="bao">Bao 🖐️</button>
+    </div>
 
-  <div class="result">
-    <p id="player-choice">Lựa chọn của bạn:</p>
-    <p id="computer-choice">Lựa chọn của máy:</p>
-    <h2 id="result-message"></h2>
-  </div>
-  
-  <script src="./index.js"></script>
-</body>
+    <div class="result">
+      <p id="player-choice">Lựa chọn của bạn:</p>
+      <p id="computer-choice">Lựa chọn của máy:</p>
+      <h2 id="result-message"></h2>
+    </div>
+    <h1>Bảng tỉ số</h1>
+    <table class="scoreboard">
+      <thead>
+        <tr>
+          <th>Người chơi</th>
+          <th>Máy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="player-score">0</td>
+          <td id="computer-score">0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>Ví dụ tạo bảng</h1>
+    <button onclick="addRow()">text</button>
+    <table id="ketQua">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Nguoi</th>
+          <th>May</th>
+          <th>Ket qua</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="./index.js"></script>
+  </body>
 </html>

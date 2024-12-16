@@ -1,27 +1,70 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-h1{
-    font-size: 1.5cm;
-    color: rgb(255,150,0);
+h1 {
+  font-size: 1.5cm;
+  color: rgb(255, 150, 0);
 }
 .choices {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
-.choices button{
-    font-size: 3cm;
-    min-width: 60px;
-    margin: 0 10px;
-    border-radius: 60px;
-    background-color: rgb(100,150,60);
-    cursor: pointer;
-    transition: background-color 0.5s ease;
+.choices button {
+  font-size: 3cm;
+  min-width: 60px;
+  margin: 0 10px;
+  border-radius: 60px;
+  background-color: rgb(100, 150, 60);
+  cursor: pointer;
+  transition: background-color 0.5s ease;
 }
-.choices button:hover{
-    background-color: rgb(170,230,140);
+.choices button:hover {
+  background-color: rgb(170, 230, 140);
+}
+table {
+  width: 50%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+table {
+  width: 50%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+.scoreboard {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+.scoreboard th,
+.scoreboard td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.scoreboard th {
+  background-color: #f4f4f4;
+  font-weight: bold;
 }
