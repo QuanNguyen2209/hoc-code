@@ -7,6 +7,11 @@ const computerScoreDisplay = document.getElementById("computer-score");
 // Các lựa chọn có thể có trong trò chơi
 const choices = ["keo", "bua", "bao"];
 const labels = ["Kéo", "Búa", "Bao"];
+const RESULT_TYPE = {
+  DRAW: 1,
+  WIN: 2,
+  LOSE: 3,
+};
 
 // Hàm tạo lựa chọn ngẫu nhiên của máy tính
 function getComputerChoice() {
@@ -18,17 +23,33 @@ function getLabels(choice) {
 let playerScore = 0;
 let computerScore = 0;
 // Hàm xác định kết quả trò chơi
-function getResult(playerChoice, computerChoice) {
-  if (playerChoice === computerChoice) return "Hòa!";
+function calculateResult(playerChoice, computerChoice) {
+  if (playerChoice === computerChoice) return RESULT_TYPE.DRAW;
   if (
     (playerChoice === "keo" && computerChoice === "bao") ||
     (playerChoice === "bua" && computerChoice === "keo") ||
     (playerChoice === "bao" && computerChoice === "bua")
   ) {
+    return RESULT_TYPE.WIN;
+  }
+  return RESULT_TYPE.LOSE;
+}
+
+function getFinalResult(resultType) {
+  if (resultType === RESULT_TYPE.WIN) {
     playerScore++;
-    return "Bạn thắng!";
-  } else ++computerScore;
-  return "Bạn thua!";
+  } else if (resultType === RESULT_TYPE.LOSE) {
+    computerScore++;
+  }
+}
+
+function getFinalResultLabel(resultType) {
+  if (resultType === RESULT_TYPE.WIN) {
+    return "Bạn thắng";
+  } else if (resultType === RESULT_TYPE.LOSE) {
+    return "Bạn thua";
+  }
+  return "Hòa";
 }
 // Gắn sự kiện click cho các nút
 buttons.forEach((button) => {
@@ -38,8 +59,9 @@ buttons.forEach((button) => {
     addRow(
       playerChoice,
       computerChoice,
-      getResult(playerChoice, computerChoice)
+      getFinalResultLabel(calculateResult(playerChoice, computerChoice))
     );
+    getFinalResult(calculateResult(playerChoice, computerChoice));
     playerScoreDisplay.textContent = playerScore;
     computerScoreDisplay.textContent = computerScore;
 
@@ -50,12 +72,13 @@ buttons.forEach((button) => {
     computerChoiceDisplay.textContent = `Lựa chọn của máy: ${getLabels(
       computerChoice
     )}`;
-    resultMessage.textContent = `Kết quả: ${getResult(
+    resultMessage.textContent = `Kết quả: ${getFinalResultLabel(calculateResult(
       playerChoice,
       computerChoice
-    )}`;
+    ))}`;
   });
 });
+
 let stt = 0;
 function addRow(playerChoice, computerChoice, result) {
   const bangKetQua = document
