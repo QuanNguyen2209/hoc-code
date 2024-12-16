@@ -7,6 +7,7 @@ const computerScoreDisplay = document.getElementById("computer-score");
 // Các lựa chọn có thể có trong trò chơi
 const choices = ["keo", "bua", "bao"];
 const labels = ["Kéo", "Búa", "Bao"];
+
 // Hàm tạo lựa chọn ngẫu nhiên của máy tính
 function getComputerChoice() {
   return choices[Math.floor(Math.random() * 3)];
